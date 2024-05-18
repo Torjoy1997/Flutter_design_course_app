@@ -1,36 +1,38 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/constants/colors.dart';
-
 class IconContainerBox extends StatelessWidget {
   const IconContainerBox(
       {super.key,
       this.width = 40,
       this.height = 40,
       this.backGroungColor = Colors.white,
-      required this.icon});
+      this.radius = 14,
+      this.shape = BoxShape.rectangle,
+      required this.icon,
+      this.onTap,
+      this.isCircle = false,
+      this.boxShadow});
 
   final double width, height;
+  final double radius;
   final Color backGroungColor;
+  final BoxShape shape;
   final Icon icon;
+  final VoidCallback? onTap;
+  final bool isCircle;
+  final List<BoxShadow>? boxShadow;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 40.0,
-      height: 40.0,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(14.0),
-        boxShadow: const [
-          BoxShadow(
-            color: AppDefineColors.kShadowColor,
-            offset: Offset(0, 12),
-            blurRadius: 32.0,
-          )
-        ],
-      ),
-      child: icon,
+          color: backGroungColor,
+          borderRadius: isCircle ? null : BorderRadius.circular(radius),
+          shape: shape,
+          boxShadow: boxShadow),
+      child: GestureDetector(onTap: onTap, child: icon),
     );
   }
 }

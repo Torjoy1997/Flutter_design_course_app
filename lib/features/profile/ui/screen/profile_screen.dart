@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:programming_course/core/components/card/model/course_card_model.dart';
 import 'package:programming_course/core/components/card/widget/explore_course_with_icon.dart';
 import 'package:programming_course/core/components/heading_title.dart';
-import 'package:programming_course/features/Home/ui/widget/certificate_view.dart';
+import 'package:programming_course/features/home/ui/widget/certificate_view.dart';
 import 'package:programming_course/utils/constants/colors.dart';
 import 'package:programming_course/utils/constants/text_design.dart';
 

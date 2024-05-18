@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:programming_course/core/components/sidebar_items/ui/side_items_view.dart';
+import 'package:programming_course/features/authentication/bloc/auth_bloc.dart';
 import 'package:programming_course/utils/constants/text_design.dart';
 
 import '../../../../utils/constants/colors.dart';
@@ -64,6 +67,30 @@ class SidebarScreen extends StatelessWidget {
                     ),
                 itemCount: sidebarItem.length),
           ),
+          GestureDetector(
+            onTap: () {
+              context.read<AuthBloc>().add(LogOutEvent());
+            },
+            child: const Row(
+              children: [
+                Icon(
+                  Icons.logout,
+                  color: Colors.grey,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'LogOut',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w800,
+                    color: Color(0xFF242629),
+                  ),
+                )
+              ],
+            ),
+          )
         ]),
       ),
     );

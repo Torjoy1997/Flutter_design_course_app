@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'model/sidebar_items_model.dart';
 
 var sidebarItem = [
   SidebarItem(
     title: "Home",
-    background:const LinearGradient(
+    background: const LinearGradient(
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
       colors: [
@@ -30,15 +31,18 @@ var sidebarItem = [
     ),
   ),
   SidebarItem(
-    title: "Billing",
+    title: "Contact",
     background: const LinearGradient(
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
         colors: [Color(0xFFFAD64A), Color(0xFFEA880F)]),
     icon: const Icon(
-      Icons.credit_card,
+      Icons.message,
       color: Colors.white,
     ),
+    onTap: (BuildContext context) {
+      context.pushNamed('ChatList');
+    },
   ),
   SidebarItem(
     title: "Settings",

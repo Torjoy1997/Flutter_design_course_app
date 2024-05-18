@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:programming_course/core/components/heading_title.dart';
-import 'package:programming_course/features/Home/ui/widget/slide_up_panale.dart';
+import 'package:programming_course/features/home/ui/widget/slide_up_panale.dart';
 
 import 'package:programming_course/utils/constants/colors.dart';
 import 'package:programming_course/utils/constants/text_design.dart';
