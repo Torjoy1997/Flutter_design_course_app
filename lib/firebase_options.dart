@@ -50,12 +50,12 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDj33o8Y0A39SehJBF8jNl60NK4MaliUuk',
-    appId: '1:788641094255:android:a57086e77b2142366c8b9a',
-    messagingSenderId: '788641094255',
-    projectId: 'flutter-course-chat-app-612b7',
-    storageBucket: 'flutter-course-chat-app-612b7.appspot.com',
+  static FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.get('apiKey'),
+    appId: dotenv.get('appId'),
+    messagingSenderId: dotenv.get('messagingSenderId'),
+    projectId: dotenv.get('projectId'),
+    storageBucket: dotenv.get('storageBucket'),
   );
 
   static FirebaseOptions ios = FirebaseOptions(
